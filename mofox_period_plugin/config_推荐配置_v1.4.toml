@@ -1,0 +1,149 @@
+# ==========================================
+# 月经周期插件 v1.4 推荐配置
+# ==========================================
+# 本配置文件已根据用户反馈优化：
+# ✅ 修复1：周期长度从28天改为30天
+# ✅ 修复2：痛苦表现优化（不再极端）
+# ✅ 修复3：支持立即生效开关
+# ✅ 修复4：添加经期淫乱度抑制
+# ==========================================
+
+# ==================== 插件主开关 ====================
+[plugin]
+enabled = false  # ⚠️ 改为 true 启用插件
+config_version = "1.4.0"
+debug_mode = false  # 生产环境建议关闭，调试时可开启
+
+# ==================== 月经周期设置 ====================
+[cycle]
+# ✅ v1.4优化：默认周期从28天改为30天（更符合实际）
+cycle_length = 30  # 完整周期长度（天），正常范围21-35天
+
+menstrual_duration = 5  # 月经期持续天数，正常3-7天
+
+auto_detect = true  # 自动检测周期变化（暂未实现）
+
+# ✅ v1.4说明：立即生效开关
+# true = 首次启用时立即进入月经期第1天
+# false = 从周期中随机一天开始（推荐）
+immediate_start = false
+
+# ==================== 影响强度设置 ====================
+[impacts]
+# 月经期影响（v1.3优化：不再极端）
+# ✅ 从 0.8 降低到 0.5（生理）
+# ✅ 从 0.7 降低到 0.4（心理）
+menstrual_physical = 0.5  # 建议范围：0.3-0.6
+menstrual_psychological = 0.4  # 建议范围：0.3-0.5
+
+# v1.3新增：月经期痛苦波动机制
+menstrual_discomfort_variation = true  # 前3天重→中，后2天轻
+menstrual_recovery_moments = true  # 对话时痛苦减轻20-40%
+
+# 卵泡期影响（恢复期，影响低）
+follicular_physical = 0.1
+follicular_psychological = 0.1
+
+# 排卵期影响（状态佳）
+ovulation_physical = 0.4
+ovulation_psychological = 0.2
+
+# 黄体期影响（PMS症状）
+luteal_physical = 0.6
+luteal_psychological = 0.5
+
+# ==================== 破限系统 ====================
+[jailbreak]
+enabled = true  # 启用破限（通过世界观设定解除限制）
+
+# 破限强度：
+# - "low": 轻度（保守）
+# - "medium": 中度（推荐）
+# - "high": 高度（开放）
+intensity = "medium"
+
+enhanced_mode = true  # KFC模式下启用增强破限
+
+# ==================== KFC集成（私聊模式） ====================
+[kfc_integration]
+enabled = true
+
+# 工作模式：
+# - "unified": 统一模式（月经状态作为KFC补充）
+# - "split": 分离模式（独立工作）
+mode = "unified"
+
+priority = 100  # 提示词注入优先级
+
+# ==================== 淫乱度系统 ====================
+[lust_system]
+enabled = true
+
+# ✅ v1.4新增：经期淫乱度抑制
+# 0.6 表示经期淫乱度降低60%
+# 建议范围：0.5-0.8（抑制50%-80%）
+menstrual_suppression = 0.6
+
+# 高潮机制阈值
+orgasm_threshold = 100.0  # 高潮阈值
+foreplay_threshold = 20.0  # 前戏阈值
+main_threshold = 60.0  # 正戏阈值
+
+# 评分权重
+base_score_weight = 1.0  # LLM评分权重
+
+# 衰减与恢复
+decay_rate = 0.1  # 高潮值每秒衰减
+post_orgasm_recovery_ratio = 0.4  # 高潮后恢复至正戏阈值的40%
+termination_decay_multiplier = 2.0  # 终止时衰减加速
+
+# 冷却时间
+cooldown_duration = 300  # 高潮次数用尽后的冷却时间（秒）
+
+# 其他参数
+initial_ratio = 0.5  # 初始高潮值系数
+passive_active_ratio = 0.3  # 被动/主动阈值系数
+low_score_threshold = 3.0  # 低评分阈值
+low_score_count_to_terminate = 3  # 连续低评分触发终止
+llm_model = "judge_model"  # LLM评分模型
+
+# ==================== 备份设置 ====================
+[backup]
+auto_backup = true  # 自动备份配置和数据
+backup_days = 30  # 备份保留天数
+
+# ==========================================
+# 配置完成后记得重启Bot！
+# ==========================================
+# 
+# 常用命令：
+# /月经状态 - 查看当前周期状态
+# /设置月经 YYYY-MM-DD - 手动设置月经开始日期
+# /淫乱状态 - 查看淫乱度状态（KFC模式）
+# /淫乱结束 - 终止当前性互动（KFC模式）
+# 
+# 常见场景配置：
+# 
+# 场景1：正常使用（推荐）
+# immediate_start = false
+# menstrual_physical = 0.5
+# menstrual_suppression = 0.6
+# 
+# 场景2：立即体验月经（测试）
+# immediate_start = true
+# menstrual_physical = 0.6
+# 
+# 场景3：强化经期体验
+# menstrual_physical = 0.7
+# menstrual_psychological = 0.6
+# menstrual_suppression = 0.8
+# 
+# 场景4：轻度周期影响
+# menstrual_physical = 0.3
+# menstrual_psychological = 0.2
+# menstrual_suppression = 0.5
+# 
+# 技术支持：
+# 如有问题，请提供配置文件和 /月经状态 命令输出
+# 
+# ==========================================
