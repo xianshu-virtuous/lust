@@ -170,7 +170,8 @@ debug_mode = true  # 启用详细日志输出
 ## 🙏 致谢
 
 - **MoFox-Studio** - 提供优秀的 Bot 框架
-- **社区贡献者：bingyv92** - 仓库链接：https://github.com/bingyv92/lust-system，本插件由改仓库改动而来。
+- **社区贡献者：bingyv92** - 仓库链接：https://github.com/bingyv92/lust-system
+- 本插件由改仓库改动而来。
 - **测试用户** - 帮助发现并修复问题
 
 ---
