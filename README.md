@@ -1,4 +1,4 @@
-# MoFox Period Plugin
+# MoFox Bot月经插件系统（带淫乱值版）
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Version](https://img.shields.io/badge/version-2.0.24-blue.svg)](https://github.com/xianshu-virtuous/lust/releases)
